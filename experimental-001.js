@@ -18,14 +18,14 @@
             offset = today.getTimezoneOffset();
 
         var currentDate = month + "." + day + "." + year,
-            currentTime = hour + ":" + minute + ":" + second;
+            currentTime = hour + ":" + minute /* + ":" + second */;
 
         document.getElementById("tk-date").innerHTML = currentDate;
         document.getElementById("tk-time").innerHTML = currentTime;
 
         var timeUpdateInterval = setInterval(function () {
             timekeeper();
-        }, 1000);
+        }, 10000);
     }
     $.fn.addTK = function () {
         $(this).append('<div class="timekeeper" id="tk-date">Date</div><div class="timekeeper" id="tk-time">Time</div>');
